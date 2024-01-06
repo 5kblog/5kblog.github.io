@@ -122,7 +122,7 @@ h2 {
 }
 .logo {
     font-weight: 300;
-    font-size: .875em;
+    font-size: 1em; // header 로고 글자 크기
     line-height: 1;
 
     span {
@@ -201,10 +201,10 @@ h2 {
 }
 
 .footer {
-    font-size: (14/16)*1em;
+    font-size: (14/16)*1.2em;
 
     h2 {
-        font-size: 1em;
+        font-size: 1.2em;
         color: #fff;
         margin: 0;
     }

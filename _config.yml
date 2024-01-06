@@ -13,14 +13,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: KIXLAB
-email: kixlab.kaist@gmail.com
+title: Seonuk Kim
+email: seonukkima@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  KAIST Interaction Lab (KIXLAB) focuses on human-computer interaction
-  research in the School of Computing at KAIST. We build interactive systems
-  that support interaction at scale.
+  Seonuk Kim's personal blog
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://kixlab.org/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://5kblog.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 title_image: "/assets/img/logo.png"
 
 analytics: "UA-88966686-1"

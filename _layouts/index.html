@@ -1,26 +1,76 @@
 ---
 layout: default
 ---
+<head>
+<style>
+  .flex-container {
+    display: flex;
+    align-items: center; /* 내용을 상하 중앙 정렬 */
+    flex-wrap: wrap; /* 필요한 경우 아이템을 다음 줄로 줄바꿈 */
+  }
+  
+  .responsive-image {
+    max-width: 300px; /* 이미지 최대 너비 설정 */
+    width: 100%; /* 이미지 너비를 부모 요소에 맞춤 */
+    height: auto; /* 이미지 높이를 자동으로 설정하여 비율 유지 */
+  }
 
-<h1 class="slogan">
-  Research of<br />
-  <em>Human–Computer Interaction</em> at Scale
-</h1>
+  .image-caption {
+    color: grey; /* 글씨 색상을 회색으로 설정 */
+    font-size: small; /* 글씨 크기를 작게 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin-top: 10px; /* 이미지와의 상단 여백 설정 */
+  }
+  
+  .introduction {
+    flex-grow: 1; /* 남은 공간을 차지하도록 설정 */
+    flex-shrink: 1; /* 화면이 줄어들 때 크기가 줄어들도록 설정 */
+    width: 270px; /* 너비 설정 */
+  }
 
-<div class="introduction">{{ content }}<br/><a href="https://www.youtube.com/watch?v=pkhTuiYvvw4" target="_blank">Learn more about KIXLAB through this video! </a>
+  @media (max-width: 800px) {
+    .responsive-image {
+      max-width: 250px; /* 이미지 최대 너비 설정 */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .image-container {
+      margin-right: 0px; /* 오른쪽 여백 설정 */
+    }
+
+    .flex-container {
+      flex-direction: column; /* 요소들을 세로로 배열 */
+    }
+  
+    .responsive-image {
+      max-width: 100%; /* 이미지 최대 너비를 화면 너비에 맞춤 */
+    }
+  
+    .introduction {
+      width: 100%; /* 텍스트 영역의 너비를 화면 너비에 맞춤 */
+    }
+
+    .image-caption {
+      margin-bottom: 30px;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div class="image-container">
+    <img src="/assets/img/about.png" class="responsive-image" alt="이미지 설명"/>
+    <div class="image-caption">Me, during UNIST NEXUS 2023</div>
+  </div>
+  <div class="introduction">{{ content }}</div>
 </div>
 
-
-<h2>Recent projects</h2>
-
-<div class="area-items">
-  {% include list_recent_projects.html projects=site.categories.projects limit=4 %}
-
-</div>
-
-<h2>Latest news</h2>
+<h2>NEWS</h2>
 
 <div class="news-entries grid-2">
-  {% include list_news.html limit=10 %}
+  {% include list_news.html limit=6 %}
 </div>
 <a href="/news">More news</a>
