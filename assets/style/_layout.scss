@@ -69,10 +69,11 @@ html {
     display: flex;
 
     .footer-item {
-      flex: 33%;
+      flex: 1 1 auto;
 
       &:last-child {
         text-align: right;
+
       }
       a {
         color: #a5a5a5;
