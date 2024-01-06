@@ -249,76 +249,79 @@ html {
 }
 
 /* Lists, navs */
+/* 기본 스타일 */
 .nav {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  @media (min-width: 601px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    text-align: right;
 
-  li {
-    margin-right: $spacing * 2;
-
-    &:last-child {
-      margin-right: 0;
+    li {
+      margin-right: $spacing * 2;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
-.main-nav .nav {
-  @media (max-width: 600px) {
+
+/* 모바일 화면에서 메뉴를 숨기고 토글 버튼을 보여줌 */
+@media (max-width: 600px) {
+  .nav {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 16px; // 드롭다운 위치 조정
+    top: 60px; // 헤더 바로 아래 위치
+    width: auto; // 메뉴 너비 자동으로 조절
+    min-width: 200px; // 최소 너비 설정
+    background-color: #fff; // 배경색
+    border-radius: 5px; // 모서리 둥글게
+    z-index: 1000; // 다른 요소들 위에 표시될 z-index 값
 
     li {
-      margin-right: 0;
       width: 100%;
 
       a {
         display: block;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem; // 패딩을 늘려 메뉴 높이 증가
+        font-size: 1rem; // 글씨 크기 증가
         text-align: left;
+        width: 100%;
       }
+    }
+
+    li:last-child {
+      border-bottom: none; // 마지막 항목 구분선 제거
     }
   }
 
-  @media (min-width: 600px) {
-    justify-content: flex-end;
-    text-align: right;
-  }
-}
-
-/* 기본적으로 모바일 메뉴를 숨깁니다 */
-.nav {
-  @media (max-width: 600px) {
-    display: none;
-  }
-}
-
-/* 햄버거 메뉴 버튼 스타일링 */
-.menu-toggle {
-  display: none; // 기본적으로 버튼을 숨깁니다.
-  @media (max-width: 600px) {
-    display: inline-block; // 모바일에서만 표시
+  .menu-toggle {
+    display: block;
     cursor: pointer;
-    position: absolute; // 버튼을 상대적으로 정렬하기 위해 절대 위치를 사용
-    right: 0; // 오른쪽에 정렬
-    top: 0; // 상단에 정렬(필요에 따라 조정 가능)
-    margin-top: 15px; // 상단 가장자리와의 간격
-    margin-right: 15px; // 오른쪽 가장자리와의 간격
-    // 필요에 따라 추가 스타일링
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1001; // 토글 버튼 z-index를 메뉴보다 높게 설정
   }
-  // 데스크탑 화면에서는 여전히 보이지 않도록 설정
-  @media (min-width: 601px) {
-    display: none;
+
+  .nav.active {
+    display: block;
   }
 }
 
-/* active 클래스가 추가되었을 때 메뉴를 표시합니다 */
-.nav.active {
-  display: flex;
-  flex-direction: column;
+/* 데스크탑 화면에서는 토글 버튼을 숨김 */
+@media (min-width: 601px) {
+  .menu-toggle {
+    display: none;
+  }
 }
 
 .wrap {
-  position: relative; // 이것은 .menu-toggle이 정렬될 기준이 됩니다.
-  // 나머지 스타일
+  position: relative; // 토글 버튼의 위치 기준
 }
