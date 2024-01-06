@@ -279,7 +279,8 @@ html {
     right: 16px; // 드롭다운 위치 조정
     top: 60px; // 헤더 바로 아래 위치
     width: auto; // 메뉴 너비 자동으로 조절
-    min-width: 200px; // 최소 너비 설정
+    min-width: 150px; // 최소 너비 설정
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); // 그림자 효과
     background-color: #fff; // 배경색
     border-radius: 5px; // 모서리 둥글게
     z-index: 1000; // 다른 요소들 위에 표시될 z-index 값
