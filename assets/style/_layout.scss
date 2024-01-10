@@ -38,7 +38,7 @@ html {
   background-color: #fff;
 }
 .wrap {
-  max-width: 69rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: $spacing;
   box-sizing: content-box;
@@ -258,6 +258,7 @@ html {
     flex-wrap: wrap;
     justify-content: flex-end;
     text-align: right;
+    margin-right: 0.5rem;
 
     li {
       margin-right: $spacing * 2;
@@ -269,7 +270,7 @@ html {
 }
 
 /* 모바일 화면에서 메뉴를 숨기고 토글 버튼을 보여줌 */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .nav {
     display: none;
     flex-direction: column;
@@ -318,7 +319,7 @@ html {
 }
 
 /* 데스크탑 화면에서는 토글 버튼을 숨김 */
-@media (min-width: 601px) {
+@media (min-width: 650px) {
   .menu-toggle {
     display: none;
   }
