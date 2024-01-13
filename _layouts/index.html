@@ -60,6 +60,29 @@ layout: default
     }
   }
 
+  .container {
+    text-align: right; /* Text aligned to the right */
+  }
+  .buttons {
+    display: inline-block; /* Allows buttons to sit next to each other */
+  }
+  .button {
+    display: inline-block; /* Align buttons horizontally */
+    background-color: #ffffff; /* White background color */
+    padding: 8px 8px; /* Smaller padding inside the button */
+    margin-left: 10px; /* Spacing between buttons */
+    border: 1px solid #000000; /* Gray border color */
+    text-decoration: none; /* Removes underline from links */
+    color: #000000; /* Gray text color */
+    font-size: 12px; /* Font size */
+    text-align: center; /* Center text inside the button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change mouse pointer on hover */
+  }
+  .button:hover {
+    background-color: #ffffff; /* Keeps background color white on hover */
+    color: #000000; /* Keeps text color gray on hover */
+  }
 </style>
 </head>
 <body>
@@ -70,6 +93,14 @@ layout: default
     <div class="image-caption">Me, during UNIST NEXUS 2023</div>
   </div>
   <div class="introduction">{{ content }}</div>
+</div>
+
+<div class="container">
+  <p style="font-size: 10pt; line-height: 220%;">For more about me:</p>
+  <div class="buttons">
+    <a href="/cv" class="button">About</a>
+    <a href="\assets\cv\20240113_SeonukKim_EN_Resume.pdf" class="button">2-page CV</a>
+  </div>
 </div>
 
 <h2>NEWS</h2>
